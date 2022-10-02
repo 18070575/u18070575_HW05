@@ -142,6 +142,49 @@ namespace Hendric.Controllers
             
         }
 
+        //public void BorrowBook(int bookId, int studentId)
+        //{
+        //    using (SqlConnection con = new SqlConnection(ConnectionString))
+        //    {
+        //        con.Open();
+        //        string query = "insert into borrows( studentId, bookId, takenDate) " +
+        //            "values(@studentId,@bookId,@takenDate) ";
+        //        using (SqlCommand cmd = new SqlCommand(query, con))
+        //        {
+
+        //            cmd.Parameters.Add(new SqlParameter("@studentId", studentId));
+        //            cmd.Parameters.Add(new SqlParameter("@bookId", bookId));
+        //            cmd.Parameters.Add(new SqlParameter("@takenDate", DateTime.Now));
+        //            cmd.ExecuteNonQuery();
+        //        }
+        //        con.Close();
+        //    }
+
+        //    GetAllStudents().Where(s => s.Id == studentId).FirstOrDefault().Book = true;
+
+        //}
+
+
+        //public void ReturnBook(int bookId, int studentId)
+        //{
+        //    using (SqlConnection con = new SqlConnection(ConnectionString))
+        //    {
+        //        con.Open();
+        //        string query = "update borrows set broughtDate = @broughtDate where borrows.studentId = @studentId  AND borrows.bookId = @bookId and broughtDate IS NULL";
+        //        ;
+        //        using (SqlCommand cmd = new SqlCommand(query, con))
+        //        {
+
+        //            cmd.Parameters.Add(new SqlParameter("@studentId", studentId));
+        //            cmd.Parameters.Add(new SqlParameter("@bookId", bookId));
+        //            cmd.Parameters.Add(new SqlParameter("@broughtDate", DateTime.Now));
+        //            cmd.ExecuteNonQuery();
+        //        }
+        //        con.Close();
+        //    }
+
+        //    GetAllStudents().Where(s => s.Id == studentId).FirstOrDefault().Book = false;
+        //}
 
     }
 }
