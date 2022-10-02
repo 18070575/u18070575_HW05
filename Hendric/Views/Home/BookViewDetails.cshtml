@@ -1,0 +1,43 @@
+﻿@model Hendric.Models.BookBorrowsVM
+
+<h2>
+    @Model.Book.Name - 
+    @if (Model.Book.Status == "Out")
+    {
+        <span style="color:red">@Model.Book.Status</span>
+    }
+    else if (Model.Book.Status == "Avaliable")
+    {
+        <span style="color:green">Model.Book.Status</span>
+    }
+</h2>
+<hr />
+<div>
+    <h3 >#Borrows - @Model.bookBorrows.Count()</h3>
+    <a href="@Url.Action("ViewStudents", "Home", new {bookid = Model.Book.BookId})" class="btn btn-info">View Students</a>
+   
+</div>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Taken Date</th>
+            <th scope="col">Brought Date</th>
+            <th scope="col"> Borrowed by </th>
+            <th scope="col"></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var book in Model.bookBorrows)
+        {
+            <tr>
+                <th scope="row">@book.BorrowId</th>
+                <td>@book.TakenDate</td>
+                <td>@book.BroughtDate</td>
+                <td>@book.BorrowedBy.Name</td>                             
+            </tr>
+        }
+
+    </tbody>
+</table>
